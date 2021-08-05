@@ -242,3 +242,58 @@ class TratamientoLista(Intermedio):
         for cliente in listaClientesDiccionario:
             vuelto=cliente["Pago"]-cliente["Costo"]
             print(cliente["nombre"],":",vuelto)
+
+class Cadena:
+    def __init__(self, cadena):
+        self.cadena = cadena
+
+    def recorrerCadena(self):
+        for i in range(len(self.cadena)):
+            print(self.cadena[i], end=" ,")
+        print()
+
+    def buscarCaracter(self, buscado):
+        print("Cadena :",self.cadena)
+        if self.cadena.count(buscado) > 0:
+            print("Encontrado : ", buscado)
+        else:
+            print("No existe caracter ", buscado)
+
+    def listaPosiciones(self, caracter):
+        lista = []
+        print("Cadena :", self.cadena)
+        for i in range(len(self.cadena)):
+            if self.cadena[i] == caracter:
+                lista.append(i)
+        return lista
+
+    def listaPalabras(self):
+        print("Cadena :", self.cadena)
+        lista = self.cadena.split(" ")
+        return lista;
+
+    def cadenaLista(self):
+        lista = ['M', 'i', ' ', 'C', 'a', 'd', 'e', 'n', 'a']
+        print("Lista :", lista)
+        cadena2 = "".join(lista)
+        return cadena2
+
+    def insertarDato(self, buscado, posicion):
+        print("Cadena original :", self.cadena)
+        return self.cadena[:posicion] + buscado + self.cadena[posicion:]
+
+    def eliminarOcurrencias(self, buscado):
+        print("Cadena original :", self.cadena)
+        return self.cadena.replace(buscado, "")
+
+    def retornaValor(self, posicion):
+        print("Cadena original :", self.cadena)
+        car = self.cadena[posicion]
+        self.cadena = self.cadena[:posicion] + self.cadena[posicion + 1:]
+        print(self.cadena)
+        return car
+
+    def concatenarCadena(self, dato):
+        print("Cadena original :", self.cadena)
+        resul = self.cadena + dato
+        print(resul)
