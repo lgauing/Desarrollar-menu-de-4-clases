@@ -178,3 +178,67 @@ class Intermedio(Basico):
             print("Los numeros {} y {} son numeros amigos.".format(numero1, numero2))
         else:
             print("Los numeros {} y {} no son numeros amigos.".format(numero1, numero2)) 
+class TratamientoLista(Intermedio):
+    def __init__(self, lista):
+        self.lista = lista
+
+    def presentarLista(self):
+        for i in range(len(self.lista)):
+            print(self.lista[i], end=" ,")
+        print()
+
+    def buscarLista(self, valor):
+        if valor in self.lista:
+            print("Encontrado en la lista el ", valor)
+        else:
+            print("No existe en la lista el ", valor)
+
+    def listaFactorial(self):
+        lisfac = []
+        inter = Intermedio()
+        print("Lista original :", self.lista)
+        for i in range(len(self.lista)):
+            lisfac.append(inter.factorial(self.lista[i]))
+        print(lisfac)
+
+    def listaPrimo(self):
+        lispri = []
+        bas = Basico()
+        print("Lista original :", self.lista)
+        for i in range(len(self.lista)):
+            if bas.primo(self.lista[i]):
+                lispri.append(self.lista[i])
+        print(lispri)
+
+    def listaNotas(self,listaNotasDicccionario):
+        print(listaNotasDicccionario)
+        for nota in listaNotasDicccionario:
+            print(nota["nombre"], ":", nota["Nota1"], ",", nota["Nota2"], ",", nota["Nota3"])
+
+    def insertarLista(self, valor, posicion):
+        print("Lista original :",self.lista)
+        self.lista.insert(posicion, valor)
+        print(self.lista)
+
+    def eliminarLista(self, valor):
+        print("Lista original :", self.lista)
+        for item in self.lista:
+            if (item == valor):
+                self.lista.remove(valor)
+
+        print(self.lista)
+
+    def retornaValorLista(self, posicion):
+        print("Lista :", self.lista)
+        return (self.lista[posicion])
+
+    def copiarTuplaLista(self, tupla):
+        print("Lista :", self.lista)
+        resul = self.lista + list(tupla)
+        print(resul)
+
+    def vueltoLista(self,listaClientesDiccionario):
+        print(listaClientesDiccionario)
+        for cliente in listaClientesDiccionario:
+            vuelto=cliente["Pago"]-cliente["Costo"]
+            print(cliente["nombre"],":",vuelto)
