@@ -303,3 +303,77 @@ while opc != "5":
 
             elif opc1 == "11":
                 print("Salir")
+if opc == "4":
+        os.system("cls")
+        opc1 = ""
+        while opc1 != "10":
+            os.system("cls")
+            print("CADENAS")
+            men1 = Menu("Menu secundario",
+                        ["1)Recorrer y presentar los datos de una cadena ",
+                         "2)Buscar un carácter en una cadena",
+                         "3)Retornar una lista con la posiciones dado un carácter de la cadena",
+                         "4)Retornar una lista con todas las palabras de una cadena",
+                         "5)Retornar una cadena a partir de una lista",
+                         "6)Insertar un dato en una cadena dada lo Posición",
+                         "7)Eliminar todas las ocurrencias en una cadena",
+                         "8)Retornar cualquier valor de una cadena eliminándolo ",
+                         "9)Concatenar cadenas",
+                         "10)Salir"])
+            opc1 = men1.menu()
+            os.system("cls")
+            cadena = "Hola mundo magico"
+            cad = Cadena(cadena)
+            if opc1 == "1":
+                print("Recorrer y presentar los datos de una cadena")
+                cad.recorrerCadena()
+                input("Presione una tecla para continuar....")
+
+            elif opc1 == "2":
+                print("Buscar un carácter en una cadena")
+                carac = input("Ingrese caracter :")
+                cad.buscarCaracter(carac)
+                input("Presione una tecla para continuar....")
+
+            elif opc1 == "3":
+                print("Retornar una lista con la posiciones dado un carácter de la cadena")
+                carac = input("Ingrese caracter :")
+                print(cad.listaPosiciones(carac))
+                input("Presione una tecla para continuar....")
+
+            elif opc1 == "4":
+                print("Retornar una lista con todas las palabras de una cadena")
+                print(cad.listaPalabras())
+                input("Presione una tecla para continuar....")
+
+            elif opc1 == "5":
+                print("Retornar una cadena a partir de una lista")
+                print(cad.cadenaLista())
+                input("Presione una tecla para continuar....")
+
+            elif opc1 == "6":
+                print("Insertar un dato en una cadena dada lo Posición")
+                pos = int(input("Ingrese posición a insertar :"))
+                print(cad.insertarDato("papa", pos))
+                input("Presione una tecla para continuar....")
+
+            elif opc1 == "7":
+                print("Eliminar todas las ocurrencias en una cadena")
+                cadena2 = input("Ingrese caracter a eliminar :")
+                print(cad.eliminarOcurrencias(cadena2))
+                input("Presione una tecla para continuar....")
+
+            elif opc1 == "8":
+                print("Retornar cualquier valor de una cadena eliminándolo")
+                pos = int(input("Ingrese posición :"))
+                print(cad.retornaValor(pos))
+                input("Presione una tecla para continuar....")
+
+            elif opc1 == "9":
+                print("Concatenar cadenas")
+                dato = input("Ingrese dato a concatenar :")
+                cad.concatenarCadena(dato)
+                input("Presione una tecla para continuar....")
+
+            elif opc1 == "10":
+                print("Muchas gracias por usar el sistema, vuelva pronto")
