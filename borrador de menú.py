@@ -219,3 +219,87 @@ while opc != "5":
 
             elif opc1 == "11":
                 print("Salir")
+ if opc == "3":
+        os.system("cls")
+        opc1 = ""
+        while opc1 != "11":
+            os.system("cls")
+            print("LISTAS")
+            men1 = Menu("Menu secundario",
+                        ["1)Recorrer y presentar los datos de una lista",
+                         "2)Buscar un valor en una lista",
+                         "3)Retornar una lista con los factoriales",
+                         "4)Retornar una lista de números primos",
+                         "5)Recorrer una lista de diccionario con notas de alumnos",
+                         "6)Insertar un dato en una Lista dada lo Posición",
+                         "7)Eliminar todas las ocurrencias en una Lista",
+                         "8)Retornar cualquier valor de una lista eliminándolo ",
+                         "9)Copiar cada elemento de una tupla en una lista",
+                         "10)Dar el vuelto a varios clientes",
+                         "11)Salir"])
+            opc1 = men1.menu()
+            os.system("cls")
+            milista = [5, 4, 7, 8, 6, 9, 7, 3, 11]
+            lis = TratamientoLista(milista)
+
+            if opc1 == "1":
+                print("Recorrer y presentar los datos de una lista")
+                lis.presentarLista()
+                input("Presione una tecla para continuar....")
+
+            elif opc1 == "2":
+                print("Buscar un valor en una lista")
+                num = int(input("Ingrese numero a buscar: "))
+                lis.buscarLista(num)
+                input("Presione una tecla para continuar....")
+
+            elif opc1 == "3":
+                print("Retornar una lista con los factoriales")
+                lis.listaFactorial()
+                input("Presione una tecla para continuar....")
+
+            elif opc1 == "4":
+                print("Retornar una lista de números primos")
+                lis.listaPrimo()
+                input("Presione una tecla para continuar....")
+
+            elif opc1 == "5":
+                print("Recorrer una lista de diccionario con notas de alumnos")
+                notas = [{"nombre":"Juan","Nota1":10,"Nota2":7,"Nota3":8},{"nombre":"Patty","Nota1":6,"Nota2":9,"Nota3":9},{"nombre":"Daniela","Nota1":7,"Nota2":7,"Nota3":10}]
+                lis.listaNotas(notas)
+                input("Presione una tecla para continuar....")
+
+            elif opc1 == "6":
+                print("Insertar un dato en una Lista dada lo Posición")
+                num = int(input("Ingrese valor a insertar :"))
+                pos = int(input("Ingrese posición :"))
+                lis.insertarLista(num, pos)
+                input("Presione una tecla para continuar....")
+
+            elif opc1 == "7":
+                print("Eliminar todas las ocurrencias en una Lista")
+                num = int(input("Ingrese valor a eliminar :"))
+                lis.eliminarLista(num)
+                input("Presione una tecla para continuar....")
+
+            elif opc1 == "8":
+                print("Retornar cualquier valor de una lista eliminándolo")
+                pos = int(input("Ingrese posicion del elemento :"))
+                print("Valor de la posición ",str(pos),": ",lis.retornaValorLista(pos))
+                input("Presione una tecla para continuar....")
+
+            elif opc1 == "9":
+                print("Copiar cada elemento de una tupla en una lista")
+                mitupla = (3, 4, 5, 6, 7, 8)
+                print("tupla :",mitupla)
+                lis.copiarTuplaLista(mitupla)
+                input("Presione una tecla para continuar....")
+
+            elif opc1 == "10":
+                print("Dar el vuelto a varios clientes")
+                clientes=[{"nombre":"Pedro","Pago":300,"Costo":185},{"nombre":"Mario","Pago":55,"Costo":42},{"nombre":"Layla","Pago":60,"Costo":53}]
+                lis.vueltoLista(clientes)
+                input("Presione una tecla para continuar....")
+
+            elif opc1 == "11":
+                print("Salir")
